@@ -19,25 +19,25 @@ APP_ID = int(os.environ.get("APP_ID", "26300022"))
 API_HASH = os.environ.get("API_HASH", "def44e13defba9d104323e821955dfa3")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002168773865"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
 #OWNER ID
 OWNER_ID = int(os.environ.get("OWNER_ID", "6057768840"))
 
 #Port
-PORT = os.environ.get("PORT", "8077")
+PORT = os.environ.get("PORT", "8080")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://rohitplayer87089:rohit870@cluster0.4wt927p.mongodb.net/?retryWrites=true&w=majority")
+DB_URI = os.environ.get("DATABASE_URL", "")
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002159880346"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", ""))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI am a permenant file store bot made for [ Frooti Leaks ] and users can access stored messages by using a shareable link given by Frooti Leaks Admin. " ) 
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI am a permenant file store bot made for [ Hentai Server ] and users can access stored messages by using a shareable link given by Hentai Server Admin. " ) 
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "6057768840").split()):
