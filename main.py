@@ -10,6 +10,9 @@ class Bot(Client):
         print("Bot has stopped!")
 
 if __name__ == "__main__":
-    # Initialize the Bot with appropriate parameters
-    bot = Bot("my_bot")  # Replace "my_bot" with the correct session name or parameters
-    bot.run()  # No extra arguments passed here
+    bot = Bot(
+        "my_bot",  # Replace with your bot's name/session string
+        api_id=26300022,  # Replace with your Telegram API ID
+        api_hash="def44e13defba9d104323e821955dfa3"  # Replace with your Telegram API hash
+    )
+    bot.run()  # No unsupported arguments like `use_qr`
