@@ -2,7 +2,6 @@ from pyrogram import Client
 
 class Bot(Client):
     async def start(self):
-        # Replace 'use_qr' logic with an alternative if needed
         await super().start()
         print("Bot has started!")
 
@@ -11,4 +10,6 @@ class Bot(Client):
         print("Bot has stopped!")
 
 if __name__ == "__main__":
-    Bot("my_bot").run()
+    # Initialize the Bot with appropriate parameters
+    bot = Bot("my_bot")  # Replace "my_bot" with the correct session name or parameters
+    bot.run()  # No extra arguments passed here
