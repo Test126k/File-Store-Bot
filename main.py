@@ -16,3 +16,8 @@ if __name__ == "__main__":
         api_hash="def44e13defba9d104323e821955dfa3"  # Replace with your Telegram API hash
     )
     bot.run()  # No unsupported arguments like `use_qr`
+from pyrogram import Client
+
+bot = Client("my_bot")
+
+bot.run()  # Simplified call without unsupported arguments
