@@ -1,9 +1,4 @@
-from pyrogram import Client
 
-bot = Client("my_bot")
-
-# Start the bot without any unsupported arguments
-bot.run()#(©)CodeXBotz
 
 
 
