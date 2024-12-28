@@ -16,7 +16,7 @@ bot = Client(
     "my_bot",
     api_id=26300022,
     api_hash="def44e13defba9d104323e821955dfa3",
-    bot_token=os.environ.get("BOT_TOKEN")
+    bot_token=os.environ.get("7714466772:AAGX4YKqTQQQAro8lJoycxBGpv6QZ5IsEvs")
 )
 
 # Start the bot in an async event loop
