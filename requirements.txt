@@ -4,4 +4,4 @@ pyromod
 pymongo
 dnspython
 aiohttp
-
+asyncio
