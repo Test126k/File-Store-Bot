@@ -1,6 +1,8 @@
 import os
+import asyncio
 from pyrogram import Client
 from flask import Flask
+from threading import Thread
 
 # Your Flask app
 app = Flask(__name__)
@@ -14,19 +16,24 @@ bot = Client(
     "my_bot",
     api_id=26300022,
     api_hash="def44e13defba9d104323e821955dfa3",
-    bot_token=os.environ.get("7714466772:AAGX4YKqTQQQAro8lJoycxBGpv6QZ5IsEvs")
+    bot_token=os.environ.get("BOT_TOKEN")
 )
 
-# Start the bot using a Flask thread-safe method
+# Start the bot in an async event loop
+async def start_bot():
+    await bot.start()
+
+# Start the Flask app
+def start_flask():
+    app.run(host="0.0.0.0", port=8080)
+
 if __name__ == "__main__":
-    from threading import Thread
+    loop = asyncio.get_event_loop()
 
-    def start_bot():
-        bot.run()
-
-    # Run the Flask app in the main thread and the bot in the background
-    thread = Thread(target=start_bot)
+    # Start both the Flask app and the bot
+    loop.create_task(start_bot())
+    thread = Thread(target=start_flask)
     thread.start()
 
-    # Run the Flask app on port 8080
-    app.run(host="0.0.0.0", port=8080)
+    # Run the event loop
+    loop.run_forever()
