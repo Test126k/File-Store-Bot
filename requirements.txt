@@ -5,3 +5,4 @@ pyromod
 pymongo
 dnspython
 aiohttp
+pyrogram==2.0.106
