@@ -1,8 +1,7 @@
 import os
-import asyncio
 from pyrogram import Client
 from flask import Flask
-from threading import Thread
+import asyncio
 
 # Your Flask app
 app = Flask(__name__)
@@ -16,24 +15,19 @@ bot = Client(
     "my_bot",
     api_id=26300022,
     api_hash="def44e13defba9d104323e821955dfa3",
-    bot_token=os.environ.get("7714466772:AAGX4YKqTQQQAro8lJoycxBGpv6QZ5IsEvs")
+    bot_token="7714466772:AAGX4YKqTQQQAro8lJoycxBGpv6QZ5IsEvs"
 )
 
-# Start the bot in an async event loop
-async def start_bot():
-    await bot.start()
-
-# Start the Flask app
-def start_flask():
-    app.run(host="0.0.0.0", port=8080)
+# Start the bot in a background thread
+def start_bot():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    bot.run()
 
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-
-    # Start both the Flask app and the bot
-    loop.create_task(start_bot())
-    thread = Thread(target=start_flask)
+    from threading import Thread
+    thread = Thread(target=start_bot)
     thread.start()
 
-    # Run the event loop
-    loop.run_forever()
+    # Run the Flask app
+    app.run(host="0.0.0.0", port=8080)  # Ensure this is on port 8080 for Koyeb health check
