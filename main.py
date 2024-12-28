@@ -17,14 +17,16 @@ bot = Client(
     bot_token=os.environ.get("7714466772:AAGX4YKqTQQQAro8lJoycxBGpv6QZ5IsEvs")
 )
 
-# Start the bot in a background thread
-def start_bot():
-    bot.run()
-
+# Start the bot using a Flask thread-safe method
 if __name__ == "__main__":
     from threading import Thread
+
+    def start_bot():
+        bot.run()
+
+    # Run the Flask app in the main thread and the bot in the background
     thread = Thread(target=start_bot)
     thread.start()
 
-    # Run the Flask app
-    app.run(host="0.0.0.0", port=8080)  # Ensure this is on port 8080 for Koyeb health check
+    # Run the Flask app on port 8080
+    app.run(host="0.0.0.0", port=8080)
