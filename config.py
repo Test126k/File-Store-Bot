@@ -1,12 +1,10 @@
 
-
-
-
-
 import os
 import logging
+from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
-from pyromod import listen
+
+load_dotenv()
 
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7553596329:AAGZoKKZGzTOS3WQNDtl4eREV6mSHl_goy4")
