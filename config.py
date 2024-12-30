@@ -9,7 +9,7 @@ from logging.handlers import RotatingFileHandler
 from pyromod import listen
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7553596329:AAGZoKKZGzTOS3WQNDtl4eREV6mSHl_goy4")
 
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "26300022"))
@@ -27,7 +27,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "6057768840"))
 PORT = os.environ.get("PORT", "8080")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://Encrypted:Ak997110@cluster0.9qw9v.mongodb.net/?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 #force sub channel id, if you want enable force sub
